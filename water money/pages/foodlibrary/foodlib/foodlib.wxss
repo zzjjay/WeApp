@@ -1,0 +1,54 @@
+/**index.wxss**/
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item_size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 200rpx;
+}
+
+.img {
+    width: 96rpx;
+    height: 96rpx;
+    margin-top: 15rpx
+}
+
+.text {
+    font-size: 18px;
+    align-content: flex-end;
+    margin-top: 15rpx;
+    margin-bottom: 15rpx
+}
+.picture{
+  margin-top: 1rpx;
+  width: 90rpx;
+  height:90rpx;
+  padding-right: 8px;
+}
+.weui-cell__bd
+{
+  font-size:20px;
+}
+.weui-cell__bd2
+{
+  font-size:16px;
+  color:#999;
+}
+.row{
+  padding-top:30px;
+  background-color: white;
+}
+.page__title
+{
+  font-size:20px;
+}

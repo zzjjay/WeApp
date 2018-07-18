@@ -1,0 +1,120 @@
+<!--index.wxml-->
+ 
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+
+  <view class="kind-list__item">
+    
+    <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_switch">
+             <image class='picture' src='/images/mm.png'></image>
+                <view class="weui-cell__bd">吃药提醒</view>
+                <view class="weui-cell__ft">
+                    <switch formType="submit" checked="{{pillToast}}" bindchange="bindPill" color="#ff6a6a"/>
+                </view>
+            </view>
+            <view>
+            <navigator hidden="{{!pillToast}}" url="" class="weui-cell weui-cell_access" over-class="weui-cell_active" >
+                <view class="weui-cell__hd">
+                  <image class='picture' src='/images/clock.png'></image>
+                  吃药时间设置
+                </view>
+               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+           </view>
+            <view class="weui-cell weui-cell_switch">
+             <image class='picture' src='/images/write.png'></image>
+                <view class="weui-cell__bd">血糖记录提醒</view>
+                <view class="weui-cell__ft">
+                  <switch checked="{{recordToast}}" bindchange="bindRecord" color="#ff6a6a"/>
+                </view>
+              </view>
+            <view>
+              <navigator hidden="{{!recordToast}}" url="../time/time" class="weui-cell weui-cell_access" over-class="weui-cell_active" >
+                <view class="weui-cell__hd">
+                  <image class='picture' src='/images/clock.png'></image>
+                  测血糖时间设置
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+            </view>
+           
+            
+    </view>
+  </view>
+      <view class="weui-cells__title">目标</view>
+      <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                  <image class='picture' src='/images/low.png'></image>
+                  <view class="weui-label">最低(mmol/L)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="minInput" type="digit" placeholder="请输入" value="{{min}}"/>
+                </view>
+          </view>
+
+          <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                <image class='picture' src='/images/high.png'></image>
+                    <view class="weui-label">最高(mmol/L)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="maxInput" type="digit" placeholder="请输入" value="{{max}}"/>
+                </view>
+            </view>
+       </view>
+        <view class="weui-cells__title">基本信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <image class='picture' src='/images/type.png'></image>
+                    <view class="weui-label">糖尿病类型</view>
+                </view>
+                <view class="weui-cell__bd2">
+                    <picker bindchange="bindTypeChange" value="{{typesIndex}}" range="{{types}}">
+                        <view class="weui-select weui-select_in-select-after">{{types[typesIndex]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+
+             <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                <image class='picture' src='/images/height.png'></image>
+                    <view class="weui-label">身高(cm)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="digit" placeholder="请输入"/>
+                    
+                </view>
+            </view>
+
+          <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                <image class='picture' src='/images/weight.png'></image>
+                    <view class="weui-label">体重(kg)</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="digit" placeholder="请输入"/>
+                </view>
+            </view>
+           <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                <image class='picture' src='/images/old.png'></image>
+                    <view class="weui-label">年龄</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="digit" placeholder="请输入"/>
+                </view>
+            </view>
+
+        
+        </view>

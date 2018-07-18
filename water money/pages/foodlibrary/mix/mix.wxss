@@ -1,0 +1,10 @@
+.picture{
+  margin-top: 1rpx;
+  width: 90rpx;
+  height: 80rpx;
+  padding-right: 8px;
+}
+.weui-cell__bd
+{
+  font-size: 20px;
+}

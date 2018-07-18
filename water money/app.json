@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/statistic/statistic",
+    "pages/record/record",
+    "pages/time/time",
+    "pages/foodlibrary/foodlib/foodlib",
+    "pages/foodlibrary/GI/GI",
+    "pages/foodlibrary/zhushi/zhushi",
+    "pages/foodlibrary/mix/mix",
+    "pages/foodlibrary/dou/dou",
+    "pages/foodlibrary/shu/shu",
+    "pages/foodlibrary/shui/shui",
+    "pages/foodlibrary/nai/nai"
+  
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFB5C5",
+    "navigationBarTitleText": "糖心",
+    "navigationBarTextStyle":"black"
+  },        
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ff6a6a",
+    "borderStyle": "",
+    "list": [
+      {
+        "selectedIconPath": "images/record1.png",
+        "iconPath": "images/record.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/static1.png",
+        "iconPath": "images/static.png",
+        "pagePath": "pages/statistic/statistic",
+        "text": "统计"
+      },
+      {
+        "selectedIconPath": "images/food1.png",
+        "iconPath": "images/food.png",
+        "pagePath": "pages/foodlibrary/foodlib/foodlib",
+        "text": "食物库"
+      },      
+      {
+        "selectedIconPath": "images/me1.png",
+        "iconPath": "images/me.png",
+        "pagePath": "pages/info/info",
+        "text": "档案"
+      }
+    ]
+  }
+}

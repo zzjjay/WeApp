@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="page">
+ <view class="page__bd page__bd_spacing">
+    <view wx:if="{{length>0}}">
+      <block wx:for="{{records}}" wx:key="*this" data-index="{{index}}">
+        <view wx:if="{{records[index].date!=records[index-1].date}}">
+            <view class="weui-cells__title">{{item.date}}</view>
+        </view>
+        <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}"bindtouchstart="touchstart" bindtouchmove="touchmove">
+          
+            <view class=" content">
+            <view class="kind-list">
+              <navigator url="../record/record?act=1&index={{index}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                <view class="weui-cell__hd">
+                  <image class='picture' src='/images/clock.png'></image>
+                </view>
+               <view class="weui-cell__bd weui-cell_primary">{{item.time}}</view>{{item.numbers}}mmol/L
+               <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+            </view>
+          </view>
+          <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+        </view>       
+       </block>   
+
+      </view>
+
+    <view wx:else> 
+        <view class="page__hd">
+          <view class="page__title"></view>
+          <view class="page__desc">你还没有血糖记录呢</view>
+          <view class="page__desc">点击下方按钮记录血糖吧</view>
+         </view>
+    </view>
+
+
+
+   <view class="button">
+    <button class="weui-btn"  bindtap="recordTap">添加血糖记录</button>
+   </view>
+ </view>
+</view>

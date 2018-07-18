@@ -1,0 +1,65 @@
+<!--static.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+              <view  hidden="{{activeIndex != 0}}">
+	              <view class="title">{{chartTitle[0]}}</view>
+                <canvas canvas-id="columnCanvas-day" class="canvas" bindtouchstart="touchHandler"></canvas>
+                <view style="text-align:center"></view>
+                <view class="page__bd page__bd_spacing">
+                <wux-wing-blank size="default">
+                  <wux-card title="正常范围 : {{min}}  ~ {{max}} mmol/L"thumb="../../images/范围.png">
+                    <view slot="body"class="piangao">偏高：{{highTime}}次</view>
+                    <view slot="body" class="zhengchang">正常：{{normalTime}}次</view>
+                    <view slot="body"class="piandi">偏低：{{lowTime}}次</view>
+                  </wux-card>
+                </wux-wing-blank>
+                </view>
+              </view>
+              <view  hidden="{{activeIndex != 1}}">
+                <view class="title">{{chartTitle[1]}}</view>
+                <canvas canvas-id="columnCanvas-week" class="canvas" bindtouchstart="touchHandler"></canvas>
+                <view style="text-align:center"></view>
+                <view class="page__bd page__bd_spacing">
+                <wux-wing-blank size="default">
+                  <wux-card title="正常范围 : {{min}}  ~ {{max}} mmol/L"thumb="../../images/范围.png">
+                    <view slot="body"class="piangao">偏高：{{highWeek}}次</view>
+                    <view slot="body" class="zhengchang">正常：{{normalWeek}}次</view>
+                    <view slot="body"class="piandi">偏低：{{lowWeek}}次</view>
+                  </wux-card>
+                </wux-wing-blank>
+                </view>
+              </view>
+              <view  hidden="{{activeIndex != 2}}">
+                  <view class="title">{{chartTitle[2]}}</view>
+                  <canvas canvas-id="columnCanvas-month" class="canvas" bindtouchstart="touchHandler"></canvas>
+                  <view style="text-align:center"></view>
+                  <view class="page__bd page__bd_spacing">
+                <wux-wing-blank size="default">
+                  <wux-card title="正常范围 : {{min}}  ~ {{max}} mmol/L"thumb="../../images/范围.png">
+                    <view slot="body"class="piangao">偏高：{{highWeek}}次</view>
+                    <view slot="body" class="zhengchang">正常：{{normalWeek}}次</view>
+                    <view slot="body"class="piandi">偏低：{{lowWeek}}次</view>
+                  </wux-card>
+                </wux-wing-blank>
+                </view>
+              
+              </view>
+            </view>
+        </view>
+
+
+
+
+
+</view>
+</view>

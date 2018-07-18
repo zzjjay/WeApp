@@ -1,0 +1,7 @@
+
+    <block wx:for="{{food}}" wx:for-item="food" wx:key="*this">
+      <view class="weui-cell weui-cell_switch">
+        <image class='picture' src="/images/{{food.picture}}.jpg"></image>
+        <view class="weui-cell__bd">{{food.name}}</view>{{food.GI}}GI/100克
+      </view>
+    </block>

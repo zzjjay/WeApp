@@ -1,0 +1,71 @@
+<!--record.wxml-->
+
+<view class="page">
+  
+ <view class="weui-cells__title">请输入你当前血糖值(mmol/L)</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view wx:if="{{act == 0}}">
+            <input class="weui-input"type="digit" focus='true' bindinput="addNumber" />
+          </view>
+          <view wx:else>
+            <input class="weui-input"type="digit" bindinput="addNumber" value="{{numbers}}"/>
+          </view>
+        </view>
+      </view>
+  </view>
+   <view class="weui-cells__title"></view>
+  <view class="page__bd_spacing">
+   <image class='picture' src='/images/碗筷.png'></image>
+    <view class="page__title">你刚刚吃了什么呀(可选)</view>
+    <view class="page__desc">添加备注和食物图片</view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view wx:if="{{act == 0}}">
+            <textarea class="weui-textarea" bindinput="addText" placeholder="请输入文本" style="height: 3.3em" />
+          </view>
+          <view wx:else>
+            <textarea class="weui-textarea" bindinput="addText" value="{{text}}" style="height: 3.3em" />
+          </view>
+        <view class="weui-textarea-counter"></view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <view class="weui-uploader">
+                    <view class="weui-uploader__hd">
+                        <view class="weui-uploader__title">食物照片</view>
+                        <view class="weui-uploader__info">{{files.length}}</view>
+                    </view>
+                    <view class="weui-uploader__bd">
+                        <view class="weui-uploader__files" id="uploaderFiles">
+                            <block wx:for="{{files}}" wx:key="{{index}}">
+                                <view class="weui-uploader__file" style="position: relative;margin-right: 10px;"  id="{{item}}">
+                                    <image class="weui-uploader__img"data-t="maker" src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+                                     <view data-index="{{index}}" class="weui-badge" data-t="maker" bindtap="deleteImage" 
+                                           style="position: absolute;bottom: -0.2em;right: -0.2em;">-</view>
+                                </view>
+                            </block>                            
+                        </view>
+                        <view class="weui-uploader__input-box">
+                            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+ 
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" catchtap="save" disabled="{{!enableSave}}">保存</button>
+  </view>
+  
+</view>

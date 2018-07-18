@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+          
+  <navigator url="../GI/GI" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+        <view class="weui-cell__hd">
+        <image class='picture' src='/images/GI.png'></image>
+        </view>
+        <view class="block">
+        <view class="page__title">GI食物</view>
+        <view class="page__desc">GI(血糖生成指数）值越低，越适合糖尿病人</view>
+        </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+
+
+</view>
+
+<view class="weui-cells__title"></view>
+<view class="row">
+    <navigator wx:for="{{items}}" url="{{item.text2}}" wx:key="this">
+        <view class="item_size">
+           <image class="img" src="{{item.src}}"></image>
+            <text class="text">{{item.text}}</text>
+        </view>
+    </navigator>
+</view>

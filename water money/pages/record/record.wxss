@@ -1,0 +1,47 @@
+.delete {    
+  position:absolute;
+  right:0;
+  top:0;
+  /* background:#ccc; */
+  opacity:1;
+  height: 36rpx;
+  font-size:22rpx;
+  font-weight:700;
+  padding:0 8rpx 0 10rpx;
+  color: #999;
+}
+.button {
+  display: flex; 
+  align-items:center;
+}
+.weui-btn{
+  background-color:#FFB5C5;
+  left:3px;
+  width:80%;
+  height:120rpx;
+  font-size: 20px;
+
+}
+.picture{
+  margin-top: 1rpx;
+  width: 60rpx;
+  height: 60rpx;
+  padding-right: 8px;
+}
+.page__title
+{
+  font-size:20px;
+}
+.weui-cells__title
+{
+  font-size:18px;
+  color:black;
+}
+.page__desc
+{
+  font-size:18px;
+}
+.weui-uploader__title
+{
+  color:#8f8f8f;
+}
